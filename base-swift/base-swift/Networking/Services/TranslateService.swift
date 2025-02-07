@@ -15,4 +15,7 @@ public class TranslateService {
     static func likeOrUnlike(_ model: LikeUnLikeRequestModel) -> BaseResult<BaseResponse> {
         return BaseRouter.likeofunlike(model: model).object()
     }
+    static func suggest(_ model: SuggestRequestModel) -> BaseResult<BaseResponse> {
+        return BaseRouter.suggest(model: model).object()
+    }
 }

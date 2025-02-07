@@ -60,3 +60,25 @@ struct LikeUnLikeRequestModel : Codable {
         return self.convertObjectToJson()?.dictionaryObject ?? [:]
     }
 }
+
+struct SuggestRequestModel : Codable {
+    var idRequest: String?
+    var suggetion: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case idRequest = "id_request"
+        case suggetion = "suggetion"
+    }
+    
+    init() {}
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        idRequest = try values.decodeIfPresent(String.self, forKey: .idRequest)
+        suggetion = try values.decodeIfPresent(String.self, forKey: .suggetion)
+    }
+    
+    mutating func toJSON() -> [String: Any] {
+        return self.convertObjectToJson()?.dictionaryObject ?? [:]
+    }
+}

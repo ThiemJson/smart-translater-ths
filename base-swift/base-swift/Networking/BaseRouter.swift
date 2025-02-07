@@ -21,6 +21,7 @@ enum BaseEndpoint : String {
     /** `Translate` */
     case translate = "/translate/"
     case likeorunlike = "/likeorunlike/"
+    case suggest = "/suggest/"
 }
 
 enum BaseRouter {
@@ -42,6 +43,7 @@ enum BaseRouter {
     /** `Translater` */
     case translate(model: TranslaterRequestModel)
     case likeofunlike(model: LikeUnLikeRequestModel)
+    case suggest(model: SuggestRequestModel)
 }
 
 extension BaseRouter: URLRequestConvertible {
@@ -57,6 +59,8 @@ extension BaseRouter: URLRequestConvertible {
             return (.post, BaseEndpoint.translate.rawValue)
         case .likeofunlike(model: _):
             return (.post, BaseEndpoint.likeorunlike.rawValue)
+        case .suggest(model: _):
+            return (.post, BaseEndpoint.suggest.rawValue)
         }
     }
     
@@ -77,6 +81,8 @@ extension BaseRouter: URLRequestConvertible {
             return translateModel.toJSON()
         case .likeofunlike(model: var likeorunlikeModel):
             return likeorunlikeModel.toJSON()
+        case .suggest(model: var suggestModel):
+            return suggestModel.toJSON()
         default:
             return [:]
         }

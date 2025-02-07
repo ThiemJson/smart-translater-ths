@@ -31,6 +31,7 @@ class TranslaterVC: BaseViewController {
     @IBOutlet weak var stackSwitchLanguage: UIStackView!
     
     private let synth = AVSpeechSynthesizer()
+    private var isTranslating = false
     private var currentRequest = ""
     private let rxTranslateType = BehaviorRelay<TranslateType>.init(value: .toVN)
     private let rxLoading = BehaviorRelay<Bool>.init(value: false)
@@ -67,12 +68,13 @@ extension TranslaterVC {
     private func initTranslater() {
         translateBtn.rx.tap()
             .subscribe { [weak self] _ in
-                guard let `self` = self else { return }
+                guard let `self` = self, !isTranslating else { return }
                 translate()
             }.disposed(by: rxDisposeBag)
         
         fromView.actionHandler = { [weak self] action in
             guard let `self` = self else { return }
+            if self.isTranslating { return }
             switch action {
             case .copy:
                 view.makeToast("Copied to clipboard !")
@@ -95,6 +97,7 @@ extension TranslaterVC {
         
         toView.actionHandler = { [weak self] action in
             guard let `self` = self else { return }
+            if self.isTranslating { return }
             switch action {
             case .copy:
                 view.makeToast("Copied to clipboard !")
@@ -149,7 +152,9 @@ extension TranslaterVC {
         stackSwitchLanguage.rx.tap()
             .observe(on: MainScheduler.asyncInstance)
             .subscribe { [weak self] _ in
-                self?.switchLanguage()
+                guard let `self` = self else { return }
+                if self.isTranslating { return }
+                self.switchLanguage()
             }.disposed(by: rxDisposeBag)
     }
     
@@ -175,6 +180,7 @@ extension TranslaterVC {
     }
     
     private func showRateTranslation() {
+        if toView.textInput.text.isEmpty { return }
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let reportAction = UIAlertAction(title: "Like", style: .default) { (action) in
@@ -213,8 +219,10 @@ extension TranslaterVC {
         let topic = topicView.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
         model.topic = topic.isEmpty ? "general" : topic
         
+        isTranslating = true
         TranslateService.translate(model)
             .onCompleted {
+                self.isTranslating = false
                 self.rxLoading.accept(false)
             }
             .onSuccess { response in
@@ -246,16 +254,15 @@ extension TranslaterVC {
     }
     
     private func promptForSuggest() {
-        let ac = UIAlertController(title: "Suggest new translation", 
+        if toView.textInput.text.isEmpty { return }
+        let ac = UIAlertController(title: "Suggest new translation",
                                    message: "Your feedback will help us improve our products.",
                                    preferredStyle: .alert)
         ac.addTextField()
 
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
-            let answer = ac.textFields![0]
-            DispatchQueue.main.async {
-                self.view.makeToast("Thanks for your suggest !")
-            }
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac, weak self] _ in
+            let suggestion = ac.textFields![0]
+            self?.suggest(suggestion.text ?? "")
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [unowned ac] _ in
@@ -267,5 +274,21 @@ extension TranslaterVC {
         ac.addAction(cancelAction)
 
         present(ac, animated: true)
+    }
+    
+    private func suggest(_ text: String) {
+        if text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return }
+        self.rxLoading.accept(true)
+        var model = SuggestRequestModel()
+        model.idRequest = currentRequest
+        model.suggetion = text
+        
+        TranslateService.suggest(model)
+            .onCompleted {
+                DispatchQueue.main.async {
+                    self.rxLoading.accept(false)
+                    self.view.makeToast("Thanks for your feedback !")
+                }
+            }
     }
 }

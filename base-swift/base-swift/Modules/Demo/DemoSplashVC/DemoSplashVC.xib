@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DemoSplashVC" customModule="base_swift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DemoSplashVC" customModule="smart_translater" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,6 +35,36 @@
                         <constraint firstAttribute="height" constant="200" id="eG8-u0-p3h"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-A9-TBq">
+                    <rect key="frame" x="107.00000000000001" y="424.66666666666669" width="179.33333333333337" height="51"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translater" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rl1-RC-4Wf" userLabel="Translater">
+                            <rect key="frame" x="12" y="12" width="155.33333333333334" height="27"/>
+                            <color key="tintColor" name="AccentColor"/>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="27"/>
+                            <color key="textColor" systemColor="tintColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Rl1-RC-4Wf" secondAttribute="bottom" constant="12" id="PHb-u1-fW0"/>
+                        <constraint firstItem="Rl1-RC-4Wf" firstAttribute="top" secondItem="fRx-A9-TBq" secondAttribute="top" constant="12" id="cOi-Hy-Df5"/>
+                        <constraint firstAttribute="trailing" secondItem="Rl1-RC-4Wf" secondAttribute="trailing" constant="12" id="zX6-zu-V8m"/>
+                        <constraint firstItem="Rl1-RC-4Wf" firstAttribute="leading" secondItem="fRx-A9-TBq" secondAttribute="leading" constant="12" id="zwQ-MF-aUW"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9X-VU-PK4">
+                    <rect key="frame" x="141.66666666666666" y="372.66666666666669" width="110" height="32"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,23 +72,33 @@
                 <constraint firstAttribute="bottom" secondItem="2be-8V-aNx" secondAttribute="bottom" id="4wd-vw-4Wp"/>
                 <constraint firstItem="bSl-Ha-xwO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="55C-o3-jUB"/>
                 <constraint firstAttribute="bottom" secondItem="my0-up-76e" secondAttribute="bottom" id="EY4-cd-XYP"/>
+                <constraint firstItem="k9X-VU-PK4" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-50" id="LMm-Wy-EBs"/>
                 <constraint firstItem="bSl-Ha-xwO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N2C-CZ-Cca"/>
                 <constraint firstAttribute="trailing" secondItem="bSl-Ha-xwO" secondAttribute="trailing" id="aPI-me-JWt"/>
                 <constraint firstAttribute="trailing" secondItem="my0-up-76e" secondAttribute="trailing" id="b6l-ui-BW6"/>
                 <constraint firstItem="my0-up-76e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="boK-OP-e7M"/>
+                <constraint firstItem="fRx-A9-TBq" firstAttribute="top" secondItem="k9X-VU-PK4" secondAttribute="bottom" constant="20" id="f02-6E-1i9"/>
                 <constraint firstItem="2be-8V-aNx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="klW-hw-V7z"/>
+                <constraint firstItem="k9X-VU-PK4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rQc-XJ-yCt"/>
                 <constraint firstItem="my0-up-76e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tba-0u-g0F"/>
+                <constraint firstItem="fRx-A9-TBq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uBi-4c-bt4"/>
                 <constraint firstAttribute="trailing" secondItem="2be-8V-aNx" secondAttribute="trailing" id="vJF-pt-q6Z"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
         <image name="ic_splash_background" width="375" height="812"/>
         <image name="ic_splash_background_bottom" width="375" height="213.66667175292969"/>
         <image name="ic_splash_background_top" width="352.66665649414062" height="140"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

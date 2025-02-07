@@ -246,6 +246,15 @@
 		DD4E17DD2D51BB37000D2B25 /* TranslateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4E17DB2D51BB37000D2B25 /* TranslateCell.xib */; };
 		DD4E17DE2D51BB37000D2B25 /* TranslateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4E17DB2D51BB37000D2B25 /* TranslateCell.xib */; };
 		DD75C1E42D51BEF200238830 /* TranslateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD75C1E32D51BEF200238830 /* TranslateCell.swift */; };
+		DDD3E3312D55B7A5005A3F70 /* TranslaterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3302D55B7A5005A3F70 /* TranslaterRequestModel.swift */; };
+		DDD3E3322D55B7A5005A3F70 /* TranslaterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3302D55B7A5005A3F70 /* TranslaterRequestModel.swift */; };
+		DDD3E3332D55B7A5005A3F70 /* TranslaterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3302D55B7A5005A3F70 /* TranslaterRequestModel.swift */; };
+		DDD3E3352D55B829005A3F70 /* TranslaterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3342D55B829005A3F70 /* TranslaterResponseModel.swift */; };
+		DDD3E3362D55B829005A3F70 /* TranslaterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3342D55B829005A3F70 /* TranslaterResponseModel.swift */; };
+		DDD3E3372D55B829005A3F70 /* TranslaterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3342D55B829005A3F70 /* TranslaterResponseModel.swift */; };
+		DDD3E33A2D55B91D005A3F70 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3392D55B91D005A3F70 /* TranslateService.swift */; };
+		DDD3E33B2D55B91D005A3F70 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3392D55B91D005A3F70 /* TranslateService.swift */; };
+		DDD3E33C2D55B91D005A3F70 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD3E3392D55B91D005A3F70 /* TranslateService.swift */; };
 		EEF0189A895456BE8F2FE1FB /* Pods_smart_translater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF846F9B7176EAD2FB1712A /* Pods_smart_translater.framework */; };
 		F8638C4E29F7ADFE0091E801 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8638C4D29F7ADFE0091E801 /* Notification+Extensions.swift */; };
 		F8638C4F29F7ADFE0091E801 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8638C4D29F7ADFE0091E801 /* Notification+Extensions.swift */; };
@@ -414,6 +423,9 @@
 		DD4E17CF2D51B141000D2B25 /* TranslaterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslaterVC.xib; sourceTree = "<group>"; };
 		DD4E17DB2D51BB37000D2B25 /* TranslateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslateCell.xib; sourceTree = "<group>"; };
 		DD75C1E32D51BEF200238830 /* TranslateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateCell.swift; sourceTree = "<group>"; };
+		DDD3E3302D55B7A5005A3F70 /* TranslaterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslaterRequestModel.swift; sourceTree = "<group>"; };
+		DDD3E3342D55B829005A3F70 /* TranslaterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslaterResponseModel.swift; sourceTree = "<group>"; };
+		DDD3E3392D55B91D005A3F70 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
 		EA3A7C7C61D5FD71DADED671 /* Pods-base-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base-swift.debug.xcconfig"; path = "Target Support Files/Pods-base-swift/Pods-base-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		EC4779F5A8F19D5418A60B81 /* Pods_smart_translaterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smart_translaterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA7013424A77B34597867E3 /* Pods-base-swift-stag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base-swift-stag.debug.xcconfig"; path = "Target Support Files/Pods-base-swift-stag/Pods-base-swift-stag.debug.xcconfig"; sourceTree = "<group>"; };
@@ -822,6 +834,15 @@
 			path = TranslateCell;
 			sourceTree = "<group>";
 		};
+		DDD3E32F2D55B783005A3F70 /* Translater */ = {
+			isa = PBXGroup;
+			children = (
+				DDD3E3302D55B7A5005A3F70 /* TranslaterRequestModel.swift */,
+				DDD3E3342D55B829005A3F70 /* TranslaterResponseModel.swift */,
+			);
+			path = Translater;
+			sourceTree = "<group>";
+		};
 		F8638C5A29F7BF7D0091E801 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +854,7 @@
 		F8638C5D29F7BF7D0091E801 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DDD3E32F2D55B783005A3F70 /* Translater */,
 				F8638C8729F7D1520091E801 /* Auth */,
 				F8638C5E29F7BF7D0091E801 /* BaseModel.swift */,
 				F8638C5F29F7BF7D0091E801 /* BaseResponse.swift */,
@@ -844,6 +866,7 @@
 			isa = PBXGroup;
 			children = (
 				F8638C8129F7CB770091E801 /* BaseAuthService.swift */,
+				DDD3E3392D55B91D005A3F70 /* TranslateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1311,6 +1334,8 @@
 				3C7ABFCA29F6E7A7007F4AB4 /* UIScrollView+Extension.swift in Sources */,
 				3C7ABF9729F6E7A7007F4AB4 /* Data+Extension.swift in Sources */,
 				3C7ABFB829F6E7A7007F4AB4 /* AVPlayer+Ext.swift in Sources */,
+				DDD3E33A2D55B91D005A3F70 /* TranslateService.swift in Sources */,
+				DDD3E3352D55B829005A3F70 /* TranslaterResponseModel.swift in Sources */,
 				F8638C7229F7BF7F0091E801 /* BaseResponse.swift in Sources */,
 				3C187ADC29F81BD4009F7A0B /* BaseRegistrationModel.swift in Sources */,
 				3C7AC02F29F6EA5A007F4AB4 /* Localizable.swift in Sources */,
@@ -1334,6 +1359,7 @@
 				3C187AEF29F8242D009F7A0B /* DemoSplashVC.swift in Sources */,
 				F8638C9F29F7D9850091E801 /* DemoLoginVM.swift in Sources */,
 				DD1FB5B02D537021008536D6 /* ExtendField.swift in Sources */,
+				DDD3E3312D55B7A5005A3F70 /* TranslaterRequestModel.swift in Sources */,
 				3C7ABFE529F6E7A7007F4AB4 /* Int64+Extension.swift in Sources */,
 				3C7ABFB529F6E7A7007F4AB4 /* PaddingLabelExtension.swift in Sources */,
 				DD4E17D02D51B141000D2B25 /* TranslaterVC.swift in Sources */,
@@ -1404,6 +1430,7 @@
 				DD1FB5A32D533D53008536D6 /* GrowingTextView.swift in Sources */,
 				3C7AC00D29F6E8CE007F4AB4 /* BaseViewModel.swift in Sources */,
 				3C7ABFAA29F6E7A7007F4AB4 /* UIButton+Extension.swift in Sources */,
+				DDD3E33B2D55B91D005A3F70 /* TranslateService.swift in Sources */,
 				F8638CA429F7DB8A0091E801 /* BaseViewModelController.swift in Sources */,
 				3C7AC00129F6E837007F4AB4 /* BasePadding.swift in Sources */,
 				F8638CA029F7D9850091E801 /* DemoLoginVM.swift in Sources */,
@@ -1425,6 +1452,7 @@
 				F8638C6D29F7BF7F0091E801 /* BaseNetworkService.swift in Sources */,
 				3C187AF729F8244E009F7A0B /* DemoSplashVM.swift in Sources */,
 				3C7AC03C29F6EB5F007F4AB4 /* PermissionUtils.swift in Sources */,
+				DDD3E3322D55B7A5005A3F70 /* TranslaterRequestModel.swift in Sources */,
 				F8638C8529F7CF700091E801 /* BaseLoginModel.swift in Sources */,
 				3C7ABFEF29F6E7A7007F4AB4 /* UILabel+Extensions.swift in Sources */,
 				3C7ABFBF29F6E7A7007F4AB4 /* String+Extension.swift in Sources */,
@@ -1451,6 +1479,7 @@
 				DD4E17D32D51B141000D2B25 /* TranslaterVC.swift in Sources */,
 				3C7AC02C29F6E9C1007F4AB4 /* LanguageModel.swift in Sources */,
 				3C7ABFC229F6E7A7007F4AB4 /* ReactiveTextfield+Extension.swift in Sources */,
+				DDD3E3362D55B829005A3F70 /* TranslaterResponseModel.swift in Sources */,
 				3C187B0429F8250B009F7A0B /* DemoDashboardVM.swift in Sources */,
 				3C7ABF9B29F6E7A7007F4AB4 /* NSLayoutConstraint+Extension.swift in Sources */,
 				3C7ABF2A29F6DDE0007F4AB4 /* AppDelegate.swift in Sources */,
@@ -1488,6 +1517,7 @@
 				DD1FB5A42D533D53008536D6 /* GrowingTextView.swift in Sources */,
 				3C7AC00E29F6E8CE007F4AB4 /* BaseViewModel.swift in Sources */,
 				3C7ABFAB29F6E7A7007F4AB4 /* UIButton+Extension.swift in Sources */,
+				DDD3E33C2D55B91D005A3F70 /* TranslateService.swift in Sources */,
 				F8638CA529F7DB8A0091E801 /* BaseViewModelController.swift in Sources */,
 				3C7AC00229F6E837007F4AB4 /* BasePadding.swift in Sources */,
 				F8638CA129F7D9850091E801 /* DemoLoginVM.swift in Sources */,
@@ -1509,6 +1539,7 @@
 				F8638C6E29F7BF7F0091E801 /* BaseNetworkService.swift in Sources */,
 				3C187AF829F8244E009F7A0B /* DemoSplashVM.swift in Sources */,
 				3C7AC03D29F6EB5F007F4AB4 /* PermissionUtils.swift in Sources */,
+				DDD3E3332D55B7A5005A3F70 /* TranslaterRequestModel.swift in Sources */,
 				F8638C8629F7CF700091E801 /* BaseLoginModel.swift in Sources */,
 				3C7ABFF029F6E7A7007F4AB4 /* UILabel+Extensions.swift in Sources */,
 				3C7ABFC029F6E7A7007F4AB4 /* String+Extension.swift in Sources */,
@@ -1535,6 +1566,7 @@
 				DD4E17D52D51B141000D2B25 /* TranslaterVC.swift in Sources */,
 				3C7AC02D29F6E9C1007F4AB4 /* LanguageModel.swift in Sources */,
 				3C7ABFC329F6E7A7007F4AB4 /* ReactiveTextfield+Extension.swift in Sources */,
+				DDD3E3372D55B829005A3F70 /* TranslaterResponseModel.swift in Sources */,
 				3C187B0529F8250B009F7A0B /* DemoDashboardVM.swift in Sources */,
 				3C7ABF9C29F6E7A7007F4AB4 /* NSLayoutConstraint+Extension.swift in Sources */,
 				3C7ABF3929F6DDEA007F4AB4 /* AppDelegate.swift in Sources */,
@@ -1715,6 +1747,8 @@
 				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "base-swift/SupportingFiles/Infos/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Translater";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1725,7 +1759,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "thiemjason.base-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "thiemjason.base-swift.smart-translater";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1747,6 +1781,8 @@
 				DEVELOPMENT_TEAM = A7Q5J9K3AS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "base-swift/SupportingFiles/Infos/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Translater";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1757,7 +1793,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "thiemjason.base-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "thiemjason.base-swift.smart-translater";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

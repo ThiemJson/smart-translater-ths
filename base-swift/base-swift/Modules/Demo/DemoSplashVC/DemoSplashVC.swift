@@ -15,6 +15,8 @@ class DemoSplashVC: BaseViewModelController<DemoSplashVM> {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        replaceRoot(to: TranslaterVC(), withTransitionType: .push, andTransitionSubtype: .fromRight)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.replaceRoot(to: TranslaterVC(), withTransitionType: .push, andTransitionSubtype: .fromRight)
+        }
     }
 }

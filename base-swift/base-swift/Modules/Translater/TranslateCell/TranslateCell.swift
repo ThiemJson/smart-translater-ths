@@ -176,21 +176,21 @@ extension TranslateCell {
             .observe(on: MainScheduler.asyncInstance)
             .subscribe { [weak self] _ in
                 guard let `self` = self else { return }
-                actionHandler?(.speaker)
+                actionHandler?(.copy)
             }.disposed(by: disposables)
         
         reactionBtn.rx.tap()
             .observe(on: MainScheduler.asyncInstance)
             .subscribe { [weak self] _ in
                 guard let `self` = self else { return }
-                actionHandler?(.speaker)
+                actionHandler?(.reation)
             }.disposed(by: disposables)
         
         moreBtn.rx.tap()
             .observe(on: MainScheduler.asyncInstance)
             .subscribe { [weak self] _ in
                 guard let `self` = self else { return }
-                actionHandler?(.speaker)
+                actionHandler?(.more)
             }.disposed(by: disposables)
     }
 }

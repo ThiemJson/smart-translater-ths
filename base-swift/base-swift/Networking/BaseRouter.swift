@@ -17,23 +17,31 @@ enum BaseEndpoint : String {
     
     /** `User` */
     case user       = "/users"
+    
+    /** `Translate` */
+    case translate = "/translate/"
+    case likeorunlike = "/likeorunlike/"
 }
 
 enum BaseRouter {
 #if Develop
-    static let domain  = "restapi.adequateshop.com"
-    static let baseURL = "http://\(domain)/api"
+    static let domain  = "103.121.90.177:8000"
+    static let baseURL = "http://\(domain)"
 #elseif Staging
-    static let domain  = "restapi.adequateshop.com"
-    static let baseURL = "http://\(domain)/api"
+    static let domain  = "103.121.90.177:8000"
+    static let baseURL = "http://\(domain)"
 #else
-    static let domain  = "restapi.adequateshop.com"
-    static let baseURL = "http://\(domain)/api"
+    static let domain  = "103.121.90.177:8000"
+    static let baseURL = "http://\(domain)"
 #endif
     
     /** `Auth` */
     case register(regisModel: BaseRegistrationModel)
     case login(loginModel: BaseLoginModel)
+    
+    /** `Translater` */
+    case translate(model: TranslaterRequestModel)
+    case likeofunlike(model: LikeUnLikeRequestModel)
 }
 
 extension BaseRouter: URLRequestConvertible {
@@ -45,6 +53,10 @@ extension BaseRouter: URLRequestConvertible {
             return (.post, BaseEndpoint.register.rawValue)
         case .login(loginModel: _):
             return (.post, BaseEndpoint.login.rawValue)
+        case .translate(model: _):
+            return (.post, BaseEndpoint.translate.rawValue)
+        case .likeofunlike(model: _):
+            return (.post, BaseEndpoint.likeorunlike.rawValue)
         }
     }
     
@@ -61,6 +73,10 @@ extension BaseRouter: URLRequestConvertible {
             return regisModel.toJSON()
         case .login(loginModel: var loginModel):
             return loginModel.toJSON()
+        case .translate(model: var translateModel):
+            return translateModel.toJSON()
+        case .likeofunlike(model: var likeorunlikeModel):
+            return likeorunlikeModel.toJSON()
         default:
             return [:]
         }

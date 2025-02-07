@@ -1,0 +1,6 @@
+framework module Pods_smart_translater_dev {
+  umbrella header "Pods-smart-translater-dev-umbrella.h"
+
+  export *
+  module * { export * }
+}

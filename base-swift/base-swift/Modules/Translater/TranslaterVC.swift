@@ -78,7 +78,7 @@ extension TranslaterVC {
                 view.makeToast("Copied to clipboard !")
                 UIPasteboard.general.string = fromView.textInput.text
             case .more:
-                break
+                promptForSuggest()
             case .speaker:
                 let text = fromView.textInput.text ?? ""
                 if text.isEmpty { break }
@@ -100,7 +100,7 @@ extension TranslaterVC {
                 view.makeToast("Copied to clipboard !")
                 UIPasteboard.general.string = toView.textInput.text
             case .more:
-                break
+                promptForSuggest()
             case .speaker:
                 playSpeaker(text: toView.textInput.text, locale: toView.rxLangague.value.locale)
             case .reation:
@@ -243,5 +243,29 @@ extension TranslaterVC {
                     self.view.makeToast("Thanks for your contribution !")
                 }
             }
+    }
+    
+    private func promptForSuggest() {
+        let ac = UIAlertController(title: "Suggest new translation", 
+                                   message: "Your feedback will help us improve our products.",
+                                   preferredStyle: .alert)
+        ac.addTextField()
+
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
+            let answer = ac.textFields![0]
+            DispatchQueue.main.async {
+                self.view.makeToast("Thanks for your suggest !")
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [unowned ac] _ in
+            ac.dismiss(animated: true)
+        }
+
+
+        ac.addAction(submitAction)
+        ac.addAction(cancelAction)
+
+        present(ac, animated: true)
     }
 }

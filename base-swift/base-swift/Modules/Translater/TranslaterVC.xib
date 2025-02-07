@@ -63,11 +63,11 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="xNZ-BW-2m6" userLabel="fromView" customClass="TranslateCell" customModule="smart_translater" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="99" width="393" height="261"/>
+                            <rect key="frame" x="0.0" y="99" width="393" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPt-9m-jSS" userLabel="gap">
-                            <rect key="frame" x="98.333333333333329" y="380" width="196.33333333333337" height="1"/>
+                            <rect key="frame" x="98.333333333333329" y="233" width="196.33333333333337" height="1"/>
                             <color key="backgroundColor" name="AccentColor"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -75,43 +75,43 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" verticalHuggingPriority="251" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Eq7-QK-81c" userLabel="toView" customClass="TranslateCell" customModule="smart_translater" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="401" width="393" height="50"/>
+                            <rect key="frame" x="0.0" y="254" width="393" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0e-Kb-6gi" userLabel="viewField" customClass="ExtendField" customModule="smart_translater" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="467" width="393" height="60"/>
+                            <rect key="frame" x="6" y="161" width="188.66666666666666" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="tyN-ab-89y"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQx-8t-YX2" userLabel="viewTopic" customClass="ExtendField" customModule="smart_translater" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="543" width="393" height="60"/>
+                            <rect key="frame" x="198.66666666666663" y="161" width="188.33333333333337" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="fPt-9m-jSS" firstAttribute="centerX" secondItem="HbT-KZ-xYN" secondAttribute="centerX" id="2tF-EA-ZX7"/>
-                        <constraint firstAttribute="bottom" secondItem="oQx-8t-YX2" secondAttribute="bottom" constant="20" id="AG5-jS-DId"/>
                         <constraint firstItem="Eq7-QK-81c" firstAttribute="top" secondItem="fPt-9m-jSS" secondAttribute="bottom" constant="20" id="CGg-Am-TLW"/>
                         <constraint firstItem="Eq7-QK-81c" firstAttribute="leading" secondItem="HbT-KZ-xYN" secondAttribute="leading" id="Cwq-NY-pBw"/>
                         <constraint firstItem="oQx-8t-YX2" firstAttribute="height" secondItem="a0e-Kb-6gi" secondAttribute="height" id="Dt0-Wq-n18"/>
-                        <constraint firstAttribute="trailing" secondItem="a0e-Kb-6gi" secondAttribute="trailing" id="FDv-Ei-6cl"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Eq7-QK-81c" secondAttribute="bottom" constant="20" id="FNW-Ex-eFE"/>
-                        <constraint firstItem="a0e-Kb-6gi" firstAttribute="top" secondItem="Eq7-QK-81c" secondAttribute="bottom" constant="16" id="NDI-yc-rG0"/>
+                        <constraint firstItem="a0e-Kb-6gi" firstAttribute="width" secondItem="oQx-8t-YX2" secondAttribute="width" id="HYN-wD-bAC"/>
+                        <constraint firstItem="a0e-Kb-6gi" firstAttribute="top" secondItem="xNZ-BW-2m6" secondAttribute="bottom" constant="12" id="INZ-Up-Vgk"/>
                         <constraint firstItem="xNZ-BW-2m6" firstAttribute="top" secondItem="csA-uZ-Wba" secondAttribute="bottom" id="PAm-q7-ZcS"/>
                         <constraint firstAttribute="trailing" secondItem="Eq7-QK-81c" secondAttribute="trailing" id="PQC-6f-cts"/>
-                        <constraint firstItem="oQx-8t-YX2" firstAttribute="trailing" secondItem="a0e-Kb-6gi" secondAttribute="trailing" id="QFe-le-LWv"/>
-                        <constraint firstItem="oQx-8t-YX2" firstAttribute="top" secondItem="a0e-Kb-6gi" secondAttribute="bottom" constant="16" id="SmZ-No-fmN"/>
-                        <constraint firstItem="fPt-9m-jSS" firstAttribute="top" secondItem="xNZ-BW-2m6" secondAttribute="bottom" constant="20" id="Soq-F8-09z"/>
-                        <constraint firstItem="oQx-8t-YX2" firstAttribute="leading" secondItem="a0e-Kb-6gi" secondAttribute="leading" id="btq-TN-K40"/>
-                        <constraint firstItem="a0e-Kb-6gi" firstAttribute="leading" secondItem="HbT-KZ-xYN" secondAttribute="leading" id="m6D-yy-cgZ"/>
+                        <constraint firstItem="oQx-8t-YX2" firstAttribute="bottom" secondItem="a0e-Kb-6gi" secondAttribute="bottom" id="Zua-U9-tmA"/>
+                        <constraint firstAttribute="trailing" secondItem="oQx-8t-YX2" secondAttribute="trailing" constant="6" id="i0c-e6-6Vf"/>
+                        <constraint firstItem="a0e-Kb-6gi" firstAttribute="leading" secondItem="HbT-KZ-xYN" secondAttribute="leading" constant="6" id="m6D-yy-cgZ"/>
                         <constraint firstItem="csA-uZ-Wba" firstAttribute="leading" secondItem="HbT-KZ-xYN" secondAttribute="leading" id="mid-pq-ffe"/>
+                        <constraint firstItem="oQx-8t-YX2" firstAttribute="leading" secondItem="a0e-Kb-6gi" secondAttribute="trailing" constant="4" id="ou8-5q-Cvf"/>
                         <constraint firstAttribute="trailing" secondItem="csA-uZ-Wba" secondAttribute="trailing" id="qux-NP-hNC"/>
                         <constraint firstItem="xNZ-BW-2m6" firstAttribute="leading" secondItem="HbT-KZ-xYN" secondAttribute="leading" id="t7t-G8-QJU"/>
+                        <constraint firstItem="fPt-9m-jSS" firstAttribute="top" secondItem="a0e-Kb-6gi" secondAttribute="bottom" constant="12" id="ttk-Np-i3a"/>
                         <constraint firstItem="fPt-9m-jSS" firstAttribute="width" secondItem="HbT-KZ-xYN" secondAttribute="width" multiplier="0.5" id="vMs-Cu-6Av"/>
                         <constraint firstAttribute="trailing" secondItem="xNZ-BW-2m6" secondAttribute="trailing" id="voA-C1-9ez"/>
+                        <constraint firstItem="oQx-8t-YX2" firstAttribute="top" secondItem="a0e-Kb-6gi" secondAttribute="top" id="y7u-cI-lRu"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

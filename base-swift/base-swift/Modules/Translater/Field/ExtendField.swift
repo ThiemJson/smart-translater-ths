@@ -19,7 +19,6 @@ enum ExtendType {
 class ExtendField: BaseNibView {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var title: UILabel!
     
     override func commonInit() {
         super.commonInit()
@@ -35,11 +34,9 @@ class ExtendField: BaseNibView {
     public func setType(_ type: ExtendType) {
         switch type {
         case .field:
-            title.text = "Field"
-            textField.placeholder = "History, math, human,.."
+            textField.placeholder = "Field ..."
         case .topic:
-            title.text = "Topic"
-            textField.placeholder = "War, work, ..."
+            textField.placeholder = "Topic ..."
         }
     }
 }

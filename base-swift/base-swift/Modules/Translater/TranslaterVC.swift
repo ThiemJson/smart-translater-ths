@@ -87,6 +87,9 @@ extension TranslaterVC {
                 showRateTranslation()
             case .didChangeInput(_):
                 break
+            case .didChangeHeight:
+                self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
             }
         }
         
@@ -104,6 +107,9 @@ extension TranslaterVC {
                 showRateTranslation()
             case .didChangeInput(_):
                 break
+            case .didChangeHeight:
+                self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
             }
         }
         

@@ -17,6 +17,7 @@ enum TranslateCellAction {
     case reation
     case more
     case didChangeInput(_ text: String)
+    case didChangeHeight
 }
 
 enum TranslateSupportLn {
@@ -122,7 +123,7 @@ extension TranslateCell {
     private func initView() {
         textInput.textAlignment = .left
         textInput.delegate = self
-        textInput.isScrollEnabled = false
+        textInput.isScrollEnabled = true
         updatePlaceholder()
     }
     
@@ -211,5 +212,6 @@ extension TranslateCell: GrowingTextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         updateHeight()
         actionHandler?(.didChangeInput(textView.text))
+        actionHandler?(.didChangeHeight)
     }
 }
